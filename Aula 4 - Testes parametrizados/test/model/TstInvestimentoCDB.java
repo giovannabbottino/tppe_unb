@@ -1,5 +1,8 @@
 package model;
 
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
@@ -35,5 +38,10 @@ public class TstInvestimentoCDB {
       this.expected_tstRendLiq = expected_tstRendLiq;
       this.expected_tstIR = expected_tstIR;
     }
+    
+	@DisplayName("Verifica o valor do rendimento liquido.")
+	@Ignore
+	@Test
+	public void Test() {}
 
 }
