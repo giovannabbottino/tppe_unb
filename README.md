@@ -6,4 +6,4 @@
 Repositorio para a materia de Tecnicas de programação em plataformas emergentes na UnB.
 
 ## Exercicios 
-- [] [Testes parametrizados](https://github.com/andrelanna/fga0242/tree/master/aula4). Solução.
+- [X] [Testes parametrizados](https://github.com/andrelanna/fga0242/tree/master/aula4). [Solução](https://github.com/giovannabbottino/tppe_unb/tree/main/Aula%204%20-%20Testes%20parametrizados).
