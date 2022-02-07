@@ -1,7 +1,5 @@
-# 
-
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) 
 # Tecnicas de programação em plataformas emergentes UnB
+[![Java SE](https://img.shields.io/badge/Java-v16-red)](https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html) [![JUnit](https://img.shields.io/badge/JUnit-v5-green)](https://junit.org/junit5/)  
 
 Repositorio para a materia de Tecnicas de programação em plataformas emergentes na UnB.
 
