@@ -17,15 +17,22 @@ public class PensaoAlimenticia {
 	}
 	
 	@Test
-	public void testUmaPensaoAlimenticia() {
+	public void testUmaPensaoAlimenticia() throws Exception {
 		simul.cadastraPensaoAlimenticia("Pensao 1",500f);
 		assertEquals(500f, simul.getPensaoAlimenticia(),0f);
 	}
 	
 	@Test
-	public void testUmaPensaoAlimenticiaSegunda() {
+	public void testUmaPensaoAlimenticiaSegunda() throws Exception {
 		simul.cadastraPensaoAlimenticia("Pensao 1",600f);
 		assertEquals(600f, simul.getPensaoAlimenticia(),0f);
+	}
+	
+	@Test
+	public void testDuasPensaoAlimenticia() throws Exception {
+		simul.cadastraPensaoAlimenticia("Pensao 1",600f);
+		simul.cadastraPensaoAlimenticia("Pensao 2",400f);
+		assertEquals(1000f, simul.getPensaoAlimenticia(),0f);
 	}
 
 }
