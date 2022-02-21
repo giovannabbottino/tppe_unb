@@ -10,6 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Before;
 
+import exception.DescricaoEmBrancoException;
+import exception.ValorRendimentoInvalidoException;
+
 @RunWith(Parameterized.class)
 public class CadastroRendimentoTest{
 	
@@ -58,7 +61,7 @@ public class CadastroRendimentoTest{
 
 	@DisplayName("Testa o cadastro de rendimento")
 	@Test
-	public void Test() {
+	public void Test() throws DescricaoEmBrancoException, ValorRendimentoInvalidoException {
 		for (Object[] rendimento : rendimentos) {
 			simulador.cadastrarRendimento((String)rendimento[0], (float)rendimento[1]);
 		}

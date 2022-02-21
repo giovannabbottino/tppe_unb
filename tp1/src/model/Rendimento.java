@@ -1,13 +1,17 @@
 package model;
 
+import exception.DescricaoEmBrancoException;
+import exception.ValorRendimentoInvalidoException;
 public class Rendimento {
 	
 	private String descricao;
 	private float valor;
 	
-	public Rendimento(String descricao, float valor){
-			this.descricao  = descricao;			
-			this.valor = valor;			
+	public Rendimento(String descricao, float valor) throws DescricaoEmBrancoException, ValorRendimentoInvalidoException{
+		if (descricao.isEmpty() || descricao == null) throw new DescricaoEmBrancoException();
+		if (valor < 0 ) throw new ValorRendimentoInvalidoException();
+		this.descricao  = descricao;			
+		this.valor = valor;			
 	}
 
 	public float getValor() {

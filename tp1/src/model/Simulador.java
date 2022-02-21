@@ -3,6 +3,9 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import exception.DescricaoEmBrancoException;
+import exception.ValorRendimentoInvalidoException;
+
 public class Simulador {
 
 	private static List<Rendimento> rendimentos;
@@ -13,7 +16,7 @@ public class Simulador {
 		this.totalRendimento = 0;
 	}
 	
-	public void cadastrarRendimento(String descricao, float valor) {
+	public void cadastrarRendimento(String descricao, float valor) throws DescricaoEmBrancoException, ValorRendimentoInvalidoException{
 		
 		Rendimento temp = new Rendimento(descricao, valor);
 		
