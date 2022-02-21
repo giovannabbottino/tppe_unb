@@ -3,15 +3,20 @@ package models;
 import java.util.LinkedList;
 import java.util.List;
 
+import Exceptions.DescricaoEmBrancoException;
+
+
 public class SimuladorIRPF {
 
 	private float totalRendimentos;
 	private List<Rendimento> rendimentos;
-	private float previdenciOficial;
-	private String descPrevidenciOficial;
+	private float totalPrevidenciOficial;
+	private List<PrevidenciaOficial> previdenciasOficiais;
 	
 	public SimuladorIRPF() {
 		rendimentos = new LinkedList<Rendimento>();
+		
+		previdenciasOficiais =new LinkedList<PrevidenciaOficial>();
 	}
 
 	public void cadastrarRendimento(String descricao, float valorRendimento) {
@@ -25,15 +30,18 @@ public class SimuladorIRPF {
 		return totalRendimentos;
 	}
 
-	public void cadastrarPrevidenciaOficial(String descPrevidenciaOficial, float valor) {
-		this.descPrevidenciOficial = descPrevidenciaOficial;
-		this.previdenciOficial = valor;
-
+	public void cadastrarPrevidenciaOficial(String descPrevidenciaOficial, float valor) throws  DescricaoEmBrancoException {
+		if(descPrevidenciaOficial.trim().length()<1) {
+			throw new DescricaoEmBrancoException();
+		}
+		PrevidenciaOficial prev = new PrevidenciaOficial(descPrevidenciaOficial,valor);
+		this.previdenciasOficiais.add(prev);
+		this.totalPrevidenciOficial += valor;
 		
 	}
 
 	public float getTotalDeducaoPrevidenciaOficial() {
-		return 1000f;//Falsificacao
+		return this.totalPrevidenciOficial;//Duplicacao
 	}
 
 
