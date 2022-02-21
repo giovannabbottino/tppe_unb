@@ -3,5 +3,19 @@
 
 Repositorio para a materia de Tecnicas de programação em plataformas emergentes na UnB.
 
-## Exercicios 
+## Participantes
+
+| Nome                                                                  | Matricula  |
+| --------------------------------------------------------------------- | ---------- |
+| [André Lucas Ferreira Lemos de Souza](https://github.com/andrelucasf) | 15/0005563 |
+| [Emanoel Belchior Elias de França](https://github.com/nukdown)        | 14/0059733 |
+| [Gabriel Azevedo Batalha](https://github.com/Gabriel-Azevedo-Batalha) | 18/0100840 |
+| [Giovanna Borges Bottino](https://github.com/giovannabbottino)        | 17/0011267 |
+| [Joao Gabriel Saliba Ribeiro](https://github.com/joaosaliba)          | 15/0012934 |
+| [Paulo Batista](https://github.com/higton)                            | 18/0054554 |
+
+## Trabalho Prático
+- [ ] [Trabalho Prático 1 - Test-Driven Development](https://github.com/andrelanna/fga0242/tree/master/tp1).  [Solução](https://github.com/giovannabbottino/tppe_unb/tree/main/tp1)
+
+## Exercícios  
 - [X] [Testes parametrizados](https://github.com/andrelanna/fga0242/tree/master/aula4). [Solução](https://github.com/giovannabbottino/tppe_unb/tree/main/Aula%204%20-%20Testes%20parametrizados).
