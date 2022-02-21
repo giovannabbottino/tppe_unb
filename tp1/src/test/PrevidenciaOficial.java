@@ -44,4 +44,10 @@ public class PrevidenciaOficial {
 	        simul.cadastrarPrevidenciaOficial("Carnê INSS 2", 3000f);
 	        assertEquals(6000f, simul.getTotalDeducaoPrevidenciaOficial(),0f);
 	    }
+		
+		@Test(expected = DescricaoEmBrancoException.class)
+		public void testeDescEmBranco() throws DescricaoEmBrancoException {
+			simul.cadastrarPrevidenciaOficial(" ", 1000f);
+			
+		}
 }
