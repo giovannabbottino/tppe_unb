@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import Exceptions.DescricaoEmBrancoException;
+import Exceptions.ValorMenorOuIgualZero;
 
 
 public class SimuladorIRPF {
@@ -30,9 +31,12 @@ public class SimuladorIRPF {
 		return totalRendimentos;
 	}
 
-	public void cadastrarPrevidenciaOficial(String descPrevidenciaOficial, float valor) throws  DescricaoEmBrancoException {
+	public void cadastrarPrevidenciaOficial(String descPrevidenciaOficial, float valor) throws  Exception {
 		if(descPrevidenciaOficial.trim().length()<1) {
 			throw new DescricaoEmBrancoException();
+		}
+		if(valor<=0) {
+			throw new ValorMenorOuIgualZero();
 		}
 		PrevidenciaOficial prev = new PrevidenciaOficial(descPrevidenciaOficial,valor);
 		this.previdenciasOficiais.add(prev);
