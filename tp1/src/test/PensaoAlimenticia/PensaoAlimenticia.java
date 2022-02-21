@@ -21,5 +21,11 @@ public class PensaoAlimenticia {
 		simul.cadastraPensaoAlimenticia("Pensao 1",500f);
 		assertEquals(500f, simul.getPensaoAlimenticia(),0f);
 	}
+	
+	@Test
+	public void testUmaPensaoAlimenticiaSegunda() {
+		simul.cadastraPensaoAlimenticia("Pensao 1",600f);
+		assertEquals(600f, simul.getPensaoAlimenticia(),0f);
+	}
 
 }
