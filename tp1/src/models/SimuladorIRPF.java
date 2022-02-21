@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import Exceptions.DescricaoEmBrancoException;
-import Exceptions.ValorMenorOuIgualZero;
+import Exceptions.ValorDeducaoInvalidoException;
 
 
 public class SimuladorIRPF {
@@ -41,7 +41,7 @@ public class SimuladorIRPF {
 			throw new DescricaoEmBrancoException();
 		}
 		if(valor<=0) {
-			throw new ValorMenorOuIgualZero();
+			throw new ValorDeducaoInvalidoException();
 		}
 		PrevidenciaOficial prev = new PrevidenciaOficial(descPrevidenciaOficial,valor);
 		this.previdenciasOficiais.add(prev);
@@ -58,7 +58,7 @@ public class SimuladorIRPF {
 			throw new DescricaoEmBrancoException();
 		}
 		if(valorPensaoAlimenticia<=0) {
-			throw new ValorMenorOuIgualZero();
+			throw new ValorDeducaoInvalidoException();
 		}
 		PensaoAlimentica pensao = new PensaoAlimentica(descPensaoAlimentica,valorPensaoAlimenticia);
 		this.pensoesAlimentica.add(pensao);

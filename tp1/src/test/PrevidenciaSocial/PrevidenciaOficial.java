@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Exceptions.DescricaoEmBrancoException;
-import Exceptions.ValorMenorOuIgualZero;
+import Exceptions.ValorDeducaoInvalidoException;
 import models.SimuladorIRPF;
 
 public class PrevidenciaOficial {
@@ -52,7 +52,7 @@ public class PrevidenciaOficial {
 			
 		}
 		
-		@Test(expected = ValorMenorOuIgualZero.class)
+		@Test(expected = ValorDeducaoInvalidoException.class)
 		public void testeValorMenorOuIgualZero() throws Exception {
 			simul.cadastrarPrevidenciaOficial(" Carnê", 0f);
 			
