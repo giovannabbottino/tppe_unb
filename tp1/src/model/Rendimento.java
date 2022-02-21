@@ -3,14 +3,14 @@ package model;
 public class Rendimento {
 	
 	private String descricao;
-	private double valor;
+	private float valor;
 	
-	public Rendimento(String descricao, double valor){
+	public Rendimento(String descricao, float valor){
 			this.descricao  = descricao;			
 			this.valor = valor;			
 	}
 
-	public double getValor() {
+	public float getValor() {
 		return valor;
 	}
 

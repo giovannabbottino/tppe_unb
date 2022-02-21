@@ -6,22 +6,25 @@ import java.util.List;
 public class Simulador {
 
 	private static List<Rendimento> rendimentos;
+	private float totalRendimento;
 	
 	public Simulador() {
 		rendimentos = new ArrayList<Rendimento>();
+		this.totalRendimento = 0;
 	}
-	public float cadastrarRendimento(String descricao, float valor) {
-		float totalRendimento = 0;
+	
+	public void cadastrarRendimento(String descricao, float valor) {
 		
 		Rendimento temp = new Rendimento(descricao, valor);
 		
 		Boolean resposta = rendimentos.add(temp);
 		
 		if(resposta) {		
-			for (Rendimento r : rendimentos)
-				totalRendimento += r.getValor();
+			this.totalRendimento += valor;
 		}
-		
+	}
+	
+	public float getTotalRendimento() {
 		return totalRendimento;
 	}
 
