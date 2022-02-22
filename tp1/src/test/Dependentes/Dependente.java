@@ -20,4 +20,10 @@ public class Dependente {
 	        simul.cadastraDependente("Joãozinho", "10/01/2000");
 	        assertEquals(189.59f, simul.getDependente(),0f);
 	    }
+		
+		@Test
+	    public void testeCadastraUmDependente(){
+	        simul.cadastraDependente("Mariazinha", "10/01/2000");
+	        assertEquals(189.59f, simul.getDependente(),0f);
+	    }
 }

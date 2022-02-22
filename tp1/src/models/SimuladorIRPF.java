@@ -19,6 +19,7 @@ public class SimuladorIRPF {
 	
 	private String nomeDepedente;
 	private String dataDeNascimento;
+	private float valorDependente;
 	
 	public SimuladorIRPF() {
 		rendimentos = new LinkedList<Rendimento>();
@@ -77,10 +78,11 @@ public class SimuladorIRPF {
 	public void cadastraDependente(String nomeDepedente, String dataDeNascimento) {
 		this.nomeDepedente = nomeDepedente;
 		this.dataDeNascimento = dataDeNascimento;
+		this.valorDependente = 189.59f;
 	}
 
 	public float getDependente() {
-		return 189.59f;// Falsificação
+		return this.valorDependente; // Duplicacao
 	}
 
 }
