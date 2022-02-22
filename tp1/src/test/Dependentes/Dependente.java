@@ -26,4 +26,11 @@ public class Dependente {
 	        simul.cadastraDependente("Mariazinha", "10/01/2000");
 	        assertEquals(189.59f, simul.getDependente(),0f);
 	    }
+		
+		@Test
+	    public void testeCadastraDoisDependente(){
+	        simul.cadastraDependente("José", "01/02/2008");
+	        simul.cadastraDependente("Maria", "22/05/2010");
+	        assertEquals(379.18f, simul.getDependente(),0f);
+	    }
 }

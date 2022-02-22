@@ -17,9 +17,8 @@ public class SimuladorIRPF {
 	private float valorTotalPensaoAlimenticia;
 	private List<PensaoAlimentica> pensoesAlimentica;
 	
-	private String nomeDepedente;
-	private String dataDeNascimento;
-	private float valorDependente;
+	private float valorTotalDependente;
+	private List<Dependente> dependente;
 	
 	public SimuladorIRPF() {
 		rendimentos = new LinkedList<Rendimento>();
@@ -27,6 +26,8 @@ public class SimuladorIRPF {
 		previdenciasOficiais =new LinkedList<PrevidenciaOficial>();
 		
 		pensoesAlimentica = new LinkedList<PensaoAlimentica>();
+		
+		dependente = new LinkedList<Dependente>();
 	}
 
 	public void cadastrarRendimento(String descricao, float valorRendimento) {
@@ -75,14 +76,15 @@ public class SimuladorIRPF {
 		return this.valorTotalPensaoAlimenticia;// Duplicacao
 	}
 	
-	public void cadastraDependente(String nomeDepedente, String dataDeNascimento) {
-		this.nomeDepedente = nomeDepedente;
-		this.dataDeNascimento = dataDeNascimento;
-		this.valorDependente = 189.59f;
+	public void cadastraDependente(String nomeDependente, String dataDeNascimento){
+		Dependente dependente = new Dependente(nomeDependente, dataDeNascimento);
+		this.dependente.add(dependente);
+		
+		this.valorTotalDependente += 189.59f;
 	}
 
 	public float getDependente() {
-		return this.valorDependente; // Duplicacao
+		return this.valorTotalDependente; // Duplicacao
 	}
 
 }
