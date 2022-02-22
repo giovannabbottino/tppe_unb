@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import Exceptions.DescricaoEmBrancoException;
+import Exceptions.NomeEmBrancoException;
 import Exceptions.ValorDeducaoInvalidoException;
 
 
@@ -76,7 +77,10 @@ public class SimuladorIRPF {
 		return this.valorTotalPensaoAlimenticia;// Duplicacao
 	}
 	
-	public void cadastraDependente(String nomeDependente, String dataDeNascimento){
+	public void cadastraDependente(String nomeDependente, String dataDeNascimento) throws Exception {
+		if(nomeDependente.trim().length()<1) {
+			throw new NomeEmBrancoException();
+		}
 		Dependente dependente = new Dependente(nomeDependente, dataDeNascimento);
 		this.dependente.add(dependente);
 		
