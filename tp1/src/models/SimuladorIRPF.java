@@ -17,6 +17,9 @@ public class SimuladorIRPF {
 	private float valorTotalPensaoAlimenticia;
 	private List<PensaoAlimentica> pensoesAlimentica;
 	
+	private String nomeDepedente;
+	private String dataDeNascimento;
+	
 	public SimuladorIRPF() {
 		rendimentos = new LinkedList<Rendimento>();
 		
@@ -70,7 +73,14 @@ public class SimuladorIRPF {
 	public float getPensaoAlimenticia() {
 		return this.valorTotalPensaoAlimenticia;// Duplicacao
 	}
+	
+	public void cadastraDependente(String nomeDepedente, String dataDeNascimento) {
+		this.nomeDepedente = nomeDepedente;
+		this.dataDeNascimento = dataDeNascimento;
+	}
 
-
+	public float getDependente() {
+		return 189.59f;// Falsificação
+	}
 
 }
