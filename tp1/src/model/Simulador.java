@@ -22,6 +22,8 @@ public class Simulador {
 	
 	private float valorTotalDependente;
 	private List<Dependente> dependente;
+	private String descricaoDeducao;
+	private float valorDeducao;
 	
 	public Simulador() {
 		rendimentos = new ArrayList<Rendimento>();
@@ -97,6 +99,18 @@ public class Simulador {
 
 	public float getDependente() {
 		return this.valorTotalDependente; // Duplicacao
+	}
+	
+	
+
+	public void cadastraDeducao(String descricaoDeducao, float valorDeducao) {
+		this.descricaoDeducao = descricaoDeducao;
+		this.valorDeducao = valorDeducao;
+		
+	}
+
+	public float getDeducao() {
+		return 1500f; //Falsificação
 	}
 	
 	
