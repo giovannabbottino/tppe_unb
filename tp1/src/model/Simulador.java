@@ -107,10 +107,11 @@ public class Simulador {
 		this.descricaoDeducao = descricaoDeducao;
 		this.valorDeducao = valorDeducao;
 		
+		
 	}
 
 	public float getDeducao() {
-		return 1500f; //Falsificação
+		return this.valorDeducao ; //Duplicaocao
 	}
 	
 	
