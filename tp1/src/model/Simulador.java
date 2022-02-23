@@ -22,8 +22,9 @@ public class Simulador {
 	
 	private float valorTotalDependente;
 	private List<Dependente> dependente;
-	private String descricaoDeducao;
-	private float valorDeducao;
+	
+	private List<Deducao> deducoes;
+	private float valorTotalDeducao;
 	
 	public Simulador() {
 		rendimentos = new ArrayList<Rendimento>();
@@ -103,15 +104,22 @@ public class Simulador {
 	
 	
 
-	public void cadastraDeducao(String descricaoDeducao, float valorDeducao) {
-		this.descricaoDeducao = descricaoDeducao;
-		this.valorDeducao = valorDeducao;
+	public void cadastraDeducao(String descricaoDeducao, float valorDeducao) throws Exception  {
+		if(descricaoDeducao.trim().length()<1) {
+			throw new DescricaoEmBrancoException();
+		}
+		if(valorDeducao<=0) {
+			throw new ValorDeducaoInvalidoException();
+		}
+		
+		Deducao deducao = new Deducao(descricaoDeducao,valorDeducao);
+		this.valorTotalDeducao += valorDeducao;
 		
 		
 	}
 
 	public float getDeducao() {
-		return this.valorDeducao ; //Duplicaocao
+		return this.valorTotalDeducao ; //Duplicaocao
 	}
 	
 	
