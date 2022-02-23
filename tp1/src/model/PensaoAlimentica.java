@@ -1,4 +1,4 @@
-package models;
+package model;
 
 public class PensaoAlimentica {
 	private String desc;

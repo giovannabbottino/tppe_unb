@@ -1,4 +1,4 @@
-package test.PensaoAlimenticia;
+package model.PensaoAlimenticia;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,15 +7,15 @@ import org.junit.Test;
 
 import Exceptions.DescricaoEmBrancoException;
 import Exceptions.ValorDeducaoInvalidoException;
-import models.SimuladorIRPF;
+import model.Simulador;
 
 public class PensaoAlimenticia {
 	
-	private SimuladorIRPF simul;
+	private Simulador simul;
 	
 	@Before
 	public void setup() {
-		simul = new SimuladorIRPF();
+		simul = new Simulador ();
 	}
 	
 	@Test

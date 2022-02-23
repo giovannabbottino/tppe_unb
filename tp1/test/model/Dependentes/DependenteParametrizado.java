@@ -1,4 +1,4 @@
-package test.Dependentes;
+package model.Dependentes;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,15 +11,15 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import models.SimuladorIRPF;
+import model.Simulador;
 
 @RunWith(Parameterized.class)
 public class DependenteParametrizado {
 
-	private SimuladorIRPF simulador;
+	private Simulador simulador;
 	@Before
 	public void setuUp() {
-		simulador = new SimuladorIRPF();
+		simulador = new Simulador();
 	}
 
 	//Atributos do objeto de teste

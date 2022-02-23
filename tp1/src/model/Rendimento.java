@@ -1,7 +1,7 @@
 package model;
 
-import exception.DescricaoEmBrancoException;
-import exception.ValorRendimentoInvalidoException;
+import Exceptions.DescricaoEmBrancoException;
+import Exceptions.ValorRendimentoInvalidoException;
 public class Rendimento {
 	
 	private String descricao;

@@ -6,8 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
-import exception.DescricaoEmBrancoException;
-import exception.ValorRendimentoInvalidoException;
+import Exceptions.DescricaoEmBrancoException;
+import Exceptions.ValorRendimentoInvalidoException;
 
 public class CadastroRendimentoExceptionTest {
 	Simulador simulador;

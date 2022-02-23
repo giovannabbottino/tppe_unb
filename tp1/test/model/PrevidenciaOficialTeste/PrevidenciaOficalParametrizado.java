@@ -1,4 +1,4 @@
-package test.PrevidenciaSocial;
+package model.PrevidenciaOficialTeste;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,16 +11,16 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import models.SimuladorIRPF;
+import model.Simulador;
 
 
 @RunWith(Parameterized.class)
 public class PrevidenciaOficalParametrizado {
 	
-	private SimuladorIRPF simulador;
+	private Simulador simulador;
 	@Before
 	public void setuUp() {
-		simulador = new SimuladorIRPF();
+		simulador = new Simulador();
 		
 	}
 	

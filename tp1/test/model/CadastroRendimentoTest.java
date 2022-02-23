@@ -6,12 +6,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+
+import Exceptions.DescricaoEmBrancoException;
+import Exceptions.ValorRendimentoInvalidoException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Before;
-
-import exception.DescricaoEmBrancoException;
-import exception.ValorRendimentoInvalidoException;
 
 @RunWith(Parameterized.class)
 public class CadastroRendimentoTest{

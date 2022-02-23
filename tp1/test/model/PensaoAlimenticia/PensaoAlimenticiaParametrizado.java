@@ -1,4 +1,4 @@
-package test.PensaoAlimenticia;
+package model.PensaoAlimenticia;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,16 +11,16 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import models.SimuladorIRPF;
+import model.Simulador;
 
 @RunWith(Parameterized.class)
 public class PensaoAlimenticiaParametrizado {
 
 //	2.1
-	private SimuladorIRPF simulador;
+	private Simulador simulador;
 	@Before
 	public void setuUp() {
-		simulador = new SimuladorIRPF();
+		simulador = new Simulador();
 		
 	}
 	

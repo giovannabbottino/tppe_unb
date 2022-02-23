@@ -1,19 +1,19 @@
-package test.Dependentes;
+package model.Dependentes;
 
 import static org.junit.Assert.assertEquals;
 import Exceptions.NomeEmBrancoException;
+import model.Simulador;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import models.SimuladorIRPF;
 
 public class Dependente {
-    private SimuladorIRPF simul;
+    private Simulador simul;
 
 	    @Before
 	    public void setup(){
-	        simul = new SimuladorIRPF();
+	        simul = new Simulador();
 	    }
 	    
 		@Test

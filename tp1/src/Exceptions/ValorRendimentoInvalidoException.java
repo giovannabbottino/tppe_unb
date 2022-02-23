@@ -1,9 +1,9 @@
-package exception;
+package Exceptions;
 
 public class ValorRendimentoInvalidoException extends Exception {
 
 	public ValorRendimentoInvalidoException() {
-		super("Valor rendimento inválido");
+		super("Valor rendimento invï¿½lido");
 	} 
 
 }
