@@ -2,15 +2,13 @@ package model;
 
 import java.util.Arrays;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import static org.junit.Assert.assertEquals;
 
 import Exceptions.DescricaoEmBrancoException;
 import Exceptions.ValorRendimentoInvalidoException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Before;
 
@@ -60,7 +58,6 @@ public class CadastroRendimentoTest{
 		return Arrays.asList(dados);
 	}
 
-	@DisplayName("Testa o cadastro de rendimento")
 	@Test
 	public void Test() throws DescricaoEmBrancoException, ValorRendimentoInvalidoException {
 		for (Object[] rendimento : rendimentos) {
