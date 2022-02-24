@@ -67,7 +67,7 @@ public class Simulador {
 	}
 
 	public float getTotalDeducaoPrevidenciaOficial() {
-		return this.totalPrevidenciOficial;//Duplicacao
+		return this.totalPrevidenciOficial;
 	}
 
 	public void cadastraPensaoAlimenticia(String descPensaoAlimentica, float valorPensaoAlimenticia) throws Exception {
@@ -85,7 +85,7 @@ public class Simulador {
 	}
 
 	public float getPensaoAlimenticia() {
-		return this.valorTotalPensaoAlimenticia;// Duplicacao
+		return this.valorTotalPensaoAlimenticia;
 	}
 	
 	public void cadastraDependente(String nomeDependente, String dataDeNascimento) throws Exception {
@@ -99,7 +99,7 @@ public class Simulador {
 	}
 
 	public float getDependente() {
-		return this.valorTotalDependente; // Duplicacao
+		return this.valorTotalDependente;
 	}
 	
 	
@@ -119,7 +119,11 @@ public class Simulador {
 	}
 
 	public float getDeducao() {
-		return this.valorTotalDeducao ; //Duplicaocao
+		return this.valorTotalDeducao ;
+	}
+	
+	public float getFaixa() {
+		return 0f; // Falsificacao
 	}
 	
 	
