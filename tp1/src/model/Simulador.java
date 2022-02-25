@@ -29,6 +29,7 @@ public class Simulador {
 	
 	private float totalImposto;
 	private float baseCalculo;
+	private float aliquota;
 	private static List<Imposto> impostos;
 	
 	public Simulador() {
@@ -45,6 +46,8 @@ public class Simulador {
 
 		this.totalImposto = 0;
 		impostos = new ArrayList<Imposto>();
+		
+		this.aliquota = 0;
 		
 	}
 	
@@ -181,12 +184,11 @@ public class Simulador {
 	}
 
 	public float getAliquota() {
-		return 0; // falsificacao
+		return this.aliquota;
 	}
 
-	public void setAliquota(float f) {
-		// TODO Auto-generated method stub
-		
+	public void setAliquota() {
+		this.aliquota = ( this.getTotalImposto()/this.getTotalRendimento() ) * 100;
 	}
 	
 	
