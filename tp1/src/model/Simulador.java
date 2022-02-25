@@ -26,6 +26,11 @@ public class Simulador {
 	private List<Deducao> deducoes;
 	private float valorTotalDeducao;
 	
+	
+	private float totalImposto;
+	private float base_calculo;
+	private static List<Imposto> impostos;
+	
 	public Simulador() {
 		rendimentos = new ArrayList<Rendimento>();
 		this.totalRendimento = 0;
@@ -35,6 +40,12 @@ public class Simulador {
 		pensoesAlimentica = new LinkedList<PensaoAlimentica>();
 		
 		dependente = new LinkedList<Dependente>();
+		
+		this.base_calculo = 0;
+
+		this.totalImposto = 0;
+		impostos = new ArrayList<Imposto>();
+		
 	}
 	
 	public void cadastrarRendimento(String descricao, float valor) throws DescricaoEmBrancoException, ValorRendimentoInvalidoException{
@@ -122,8 +133,48 @@ public class Simulador {
 		return this.valorTotalDeducao ;
 	}
 	
-	public float getFaixa() {
-		return 0f; // Falsificacao
+	public void setBaseCalculo() {
+		this.base_calculo = this.getTotalRendimento() - this.getDeducao();
+	}
+	
+
+	public void apuracaoImposto() {
+		this.setBaseCalculo();
+		Imposto temp;
+		float base = this.base_calculo;
+		
+		if (base > 1903.98f){
+            // 2a faixa
+            base -= 1903.98f;
+            temp = new Imposto((Math.min(base, 922.67f) * 7.5f/100), 2); 
+            impostos.add(temp);
+            if(base > 922.67f) {
+                // 3a faixa
+                base -= 922.67f;
+                temp = new Imposto((Math.min(base, 924.40f) * 15f/100), 3); 
+                impostos.add(temp);
+                if (base > 924.40f) {
+                    // 4a faixa
+                    base -= 924.40f;
+                    temp = new Imposto((Math.min(base, 913.63f) * 22.5f/100), 4);
+                    impostos.add(temp);
+                    if(base > 913.63f) {
+                        // 5a faixa
+                        base -= 913.63f;
+                        temp = new Imposto(( base * 27.5f/100), 5);
+                        impostos.add(temp);
+                        
+                    }
+                }
+            }    
+        }
+	}
+	
+	public float getTotalImposto() {
+		for(Imposto i : impostos){
+			this.totalImposto += i.getValor();
+		}
+		return this.totalImposto;
 	}
 	
 	
