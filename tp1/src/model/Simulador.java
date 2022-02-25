@@ -179,6 +179,15 @@ public class Simulador {
 		}
 		return this.totalImposto;
 	}
+
+	public float getAliquota() {
+		return 0; // falsificacao
+	}
+
+	public void setAliquota(float f) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 
