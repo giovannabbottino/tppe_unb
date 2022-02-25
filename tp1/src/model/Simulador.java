@@ -28,7 +28,7 @@ public class Simulador {
 	
 	
 	private float totalImposto;
-	private float base_calculo;
+	private float baseCalculo;
 	private static List<Imposto> impostos;
 	
 	public Simulador() {
@@ -41,7 +41,7 @@ public class Simulador {
 		
 		dependente = new LinkedList<Dependente>();
 		
-		this.base_calculo = 0;
+		this.baseCalculo = 0;
 
 		this.totalImposto = 0;
 		impostos = new ArrayList<Imposto>();
@@ -133,15 +133,18 @@ public class Simulador {
 		return this.valorTotalDeducao ;
 	}
 	
-	public void setBaseCalculo() {
-		this.base_calculo = this.getTotalRendimento() - this.getDeducao();
+	public void setBaseCalculo(float baseCalculo) {
+		this.baseCalculo = baseCalculo;
+	}
+	
+	public float getBaseCalculo() {
+		return this.baseCalculo;
 	}
 	
 
-	public void apuracaoImposto() {
-		this.setBaseCalculo();
+	public void apuracaoImposto() {		
 		Imposto temp;
-		float base = this.base_calculo;
+		float base = this.baseCalculo;
 		
 		if (base > 1903.98f){
             // 2a faixa
