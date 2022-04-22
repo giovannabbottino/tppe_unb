@@ -73,7 +73,7 @@ public class DeducaoParametrizado {
 		for(Object[]deducao:deducoes) {
 			simulador.cadastraDeducao((String)deducao[0], (Float)deducao[1]);
 		}
-		assertEquals(valorEsperado, simulador.getDeducao(),0f);
+		assertEquals(valorEsperado, simulador.getTotalDeducao(),0f);
 	}
 
 }

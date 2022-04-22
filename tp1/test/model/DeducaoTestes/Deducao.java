@@ -22,13 +22,13 @@ public class Deducao {
     public void testeCadastraDeducaoUm() throws Exception {
         simul.cadastraDeducao("Previdencia privada", 1500f);
         
-        assertEquals(1500f, simul.getDeducao(),0f);
+        assertEquals(1500f, simul.getTotalDeducao(),0f);
     }
 	@Test
     public void testeCadastraDeducaoDois() throws Exception {
         simul.cadastraDeducao("Previdencia privada", 1200f);
         
-        assertEquals(1200f, simul.getDeducao(),0f);
+        assertEquals(1200f, simul.getTotalDeducao(),0f);
     }
 	
 	@Test
@@ -36,7 +36,7 @@ public class Deducao {
         simul.cadastraDeducao("Previdencia privada", 1500f);
         simul.cadastraDeducao("Funpresp", 1200f);
         
-        assertEquals(2700f, simul.getDeducao(),0f);
+        assertEquals(2700f, simul.getTotalDeducao(),0f);
     }
 	
 	@Test(expected = DescricaoEmBrancoException.class)

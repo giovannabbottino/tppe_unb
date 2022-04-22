@@ -10,4 +10,12 @@ public class PensaoAlimentica {
 		this.valor = valor;
 	}
 
+
+
+	public float getValor() {
+		return valor;
+	}
+
+
+	
 }

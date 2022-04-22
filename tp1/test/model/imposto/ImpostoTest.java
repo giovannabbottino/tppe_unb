@@ -82,7 +82,7 @@ public class ImpostoTest {
 		for (Object[] deducao : deducoes) {
 			simulador.cadastraDeducao((String)deducao[0], (float)deducao[1]);
 		}
-		simulador.setBaseCalculo(simulador.getTotalRendimento() - simulador.getDeducao());
+		simulador.setBaseCalculo(simulador.getTotalRendimento() - simulador.getTotalDeducao());
 		simulador.apuracaoImposto();
 		assertEquals(this.totalImpostoEsperado, simulador.getTotalImposto(), 2f);
 	}
@@ -95,7 +95,7 @@ public class ImpostoTest {
 		for (Object[] deducao : deducoes) {
 			simulador.cadastraDeducao((String)deducao[0], (float)deducao[1]);
 		}
-		simulador.setBaseCalculo(simulador.getTotalRendimento() - simulador.getDeducao());
+		simulador.setBaseCalculo(simulador.getTotalRendimento() - simulador.getTotalDeducao());
 		simulador.apuracaoImposto();
 		assertEquals(this.baseCalculoEsperado, simulador.getBaseCalculo(), 2f);
 	}

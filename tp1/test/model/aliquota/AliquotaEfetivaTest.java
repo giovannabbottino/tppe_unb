@@ -78,7 +78,7 @@ public class AliquotaEfetivaTest{
 		for (Object[] deducao : deducoes) {
 			simulador.cadastraDeducao((String)deducao[0], (float)deducao[1]);
 		}
-		simulador.setBaseCalculo(simulador.getTotalRendimento() - simulador.getDeducao());
+		simulador.setBaseCalculo(simulador.getTotalRendimento() - simulador.getTotalDeducao());
 		simulador.apuracaoImposto();
 		simulador.setAliquotaEfetiva();
 		assertEquals(this.aliquotaEfetivaEsperado, simulador.getAliquotaEfetiva(), 2f);

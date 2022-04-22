@@ -12,9 +12,7 @@ import Exceptions.ValorRendimentoInvalidoException;
 public class Simulador {
 
 	private static List<Rendimento> rendimentos;
-	private float totalRendimento;
 	
-	private float totalPrevidenciOficial;
 	private List<PrevidenciaOficial> previdenciasOficiais;
 	
 	private float valorTotalPensaoAlimenticia;
@@ -24,7 +22,6 @@ public class Simulador {
 	private List<Dependente> dependente;
 	
 	private List<Deducao> deducoes;
-	private float valorTotalDeducao;
 	
 	
 	private float totalImposto;
@@ -34,13 +31,13 @@ public class Simulador {
 	
 	public Simulador() {
 		rendimentos = new ArrayList<Rendimento>();
-		this.totalRendimento = 0;
 		
 		previdenciasOficiais =new LinkedList<PrevidenciaOficial>();
 		
 		pensoesAlimentica = new LinkedList<PensaoAlimentica>();
 		
 		dependente = new LinkedList<Dependente>();
+		deducoes = new LinkedList<Deducao>();
 		
 		this.baseCalculo = 0;
 
@@ -57,14 +54,14 @@ public class Simulador {
 		verificaExecptions(descricao, valor);
 		Rendimento temp = new Rendimento(descricao, valor);
 		
-		Boolean resposta = rendimentos.add(temp);
-		
-		if(resposta) {		
-			this.totalRendimento += valor;
-		}
+		rendimentos.add(temp);
 	}
 	
 	public float getTotalRendimento() {
+		float totalRendimento =0.0f;
+		for(Rendimento rendimento: this.rendimentos) {
+			totalRendimento+= rendimento.getValor();
+		}
 		return totalRendimento;
 	}
 	
@@ -73,27 +70,34 @@ public class Simulador {
 		verificaExecptions(descPrevidenciaOficial, valor);
 		PrevidenciaOficial prev = new PrevidenciaOficial(descPrevidenciaOficial,valor);
 		this.previdenciasOficiais.add(prev);
-		this.totalPrevidenciOficial += valor;
 		
 	}
 
-	
-
 	public float getTotalDeducaoPrevidenciaOficial() {
-		return this.totalPrevidenciOficial;
+		float totalPrevidenciOficial= 0.0f;
+		for(PrevidenciaOficial prev: this.previdenciasOficiais) {
+			totalPrevidenciOficial+= prev.getValor();
+		}
+		return totalPrevidenciOficial;
 	}
+
+
 
 	public void cadastraPensaoAlimenticia(String descPensaoAlimentica, float valorPensaoAlimenticia) throws Exception {
 		verificaExecptions(descPensaoAlimentica, valorPensaoAlimenticia);
 		PensaoAlimentica pensao = new PensaoAlimentica(descPensaoAlimentica,valorPensaoAlimenticia);
 		this.pensoesAlimentica.add(pensao);
 		
-		this.valorTotalPensaoAlimenticia += valorPensaoAlimenticia;
+	
 		
 	}
 
-	public float getPensaoAlimenticia() {
-		return this.valorTotalPensaoAlimenticia;
+	public float getTotalPensaoAlimenticia() {
+		float valorTotalPensaoAlimenticia =0.0f;
+		for(PensaoAlimentica pensao: this.pensoesAlimentica) {
+			valorTotalPensaoAlimenticia+= pensao.getValor();
+		}
+		return valorTotalPensaoAlimenticia;
 	}
 	
 	public void cadastraDependente(String nomeDependente, String dataDeNascimento) throws Exception {
@@ -116,13 +120,17 @@ public class Simulador {
 		verificaExecptions(descricaoDeducao, valorDeducao);
 		
 		Deducao deducao = new Deducao(descricaoDeducao,valorDeducao);
-		this.valorTotalDeducao += valorDeducao;
+		this.deducoes.add(deducao);
 		
 		
 	}
 
-	public float getDeducao() {
-		return this.valorTotalDeducao ;
+	public float getTotalDeducao() {
+		float valorTotalDeducao=0.0f;
+		for(Deducao deducao: this.deducoes) {
+			valorTotalDeducao+= deducao.getValor();
+		}
+		return valorTotalDeducao ;
 	}
 	
 	public void setBaseCalculo(float baseCalculo) {

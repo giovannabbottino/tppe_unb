@@ -71,7 +71,7 @@ public class PensaoAlimenticiaParametrizado {
 		for(Object[]pensao:pensoes) {
 			simulador.cadastraPensaoAlimenticia((String)pensao[0], (Float)pensao[1]);
 		}
-		assertEquals(valorEsperado, simulador.getPensaoAlimenticia(),0f);
+		assertEquals(valorEsperado, simulador.getTotalPensaoAlimenticia(),0f);
 	}
 
 }
