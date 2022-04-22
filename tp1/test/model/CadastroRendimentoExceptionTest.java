@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Exceptions.DescricaoEmBrancoException;
+import Exceptions.ValorInvalidoException;
 import Exceptions.ValorRendimentoInvalidoException;
 
 public class CadastroRendimentoExceptionTest {
@@ -17,13 +18,13 @@ public class CadastroRendimentoExceptionTest {
 	}
 
 	@Test(expected = DescricaoEmBrancoException.class)
-	public void cadastroRendimentoDescricaoEmBrancoExceptionTest() throws DescricaoEmBrancoException, ValorRendimentoInvalidoException {
+	public void cadastroRendimentoDescricaoEmBrancoExceptionTest() throws DescricaoEmBrancoException, ValorInvalidoException {
 		simulador.cadastrarRendimento("", 1000);
 		assertEquals(1000 , simulador.getTotalRendimento(), 0f);
 	}
 
-	@Test(expected = ValorRendimentoInvalidoException.class)
-	public void cadastroRendimentoValorRendimentoInvalidoExceptionTest() throws DescricaoEmBrancoException, ValorRendimentoInvalidoException {
+	@Test(expected = ValorInvalidoException.class)
+	public void cadastroRendimentoValorRendimentoInvalidoExceptionTest() throws DescricaoEmBrancoException, ValorInvalidoException {
 		simulador.cadastrarRendimento("Aluguel", -1);
 		assertEquals(-1 , simulador.getTotalRendimento(), 0f);
 	}

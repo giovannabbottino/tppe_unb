@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Exceptions.DescricaoEmBrancoException;
-import Exceptions.ValorDeducaoInvalidoException;
+import Exceptions.ValorInvalidoException;
 import model.Simulador;
 
 public class Deducao {
@@ -45,7 +45,7 @@ public class Deducao {
 		
 	}
 	
-	@Test(expected = ValorDeducaoInvalidoException.class)
+	@Test(expected = ValorInvalidoException.class)
 	public void testeValorMenorOuIgualZero() throws Exception {
 		simul.cadastrarPrevidenciaOficial(" Funpresp", 0f);
 		

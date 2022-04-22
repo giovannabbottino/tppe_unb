@@ -8,6 +8,7 @@ import org.junit.runners.Parameterized.Parameters;
 import static org.junit.Assert.assertEquals;
 
 import Exceptions.DescricaoEmBrancoException;
+import Exceptions.ValorInvalidoException;
 import Exceptions.ValorRendimentoInvalidoException;
 
 import org.junit.Before;
@@ -59,7 +60,7 @@ public class CadastroRendimentoTest{
 	}
 
 	@Test
-	public void Test() throws DescricaoEmBrancoException, ValorRendimentoInvalidoException {
+	public void Test() throws DescricaoEmBrancoException, ValorInvalidoException {
 		for (Object[] rendimento : rendimentos) {
 			simulador.cadastrarRendimento((String)rendimento[0], (float)rendimento[1]);
 		}

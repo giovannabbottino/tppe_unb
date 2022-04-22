@@ -6,7 +6,7 @@ import java.util.List;
 
 import Exceptions.DescricaoEmBrancoException;
 import Exceptions.NomeEmBrancoException;
-import Exceptions.ValorDeducaoInvalidoException;
+import Exceptions.ValorInvalidoException;
 import Exceptions.ValorRendimentoInvalidoException;
 
 public class Simulador {
@@ -51,8 +51,10 @@ public class Simulador {
 		
 	}
 	
-	public void cadastrarRendimento(String descricao, float valor) throws DescricaoEmBrancoException, ValorRendimentoInvalidoException{
+	public void cadastrarRendimento(String descricao, float valor) throws DescricaoEmBrancoException, ValorInvalidoException{
 		
+
+		verificaExecptions(descricao, valor);
 		Rendimento temp = new Rendimento(descricao, valor);
 		
 		Boolean resposta = rendimentos.add(temp);
@@ -68,29 +70,21 @@ public class Simulador {
 	
 
 	public void cadastrarPrevidenciaOficial(String descPrevidenciaOficial, float valor) throws  Exception {
-		if(descPrevidenciaOficial.trim().length()<1) {
-			throw new DescricaoEmBrancoException();
-		}
-		if(valor<=0) {
-			throw new ValorDeducaoInvalidoException();
-		}
+		verificaExecptions(descPrevidenciaOficial, valor);
 		PrevidenciaOficial prev = new PrevidenciaOficial(descPrevidenciaOficial,valor);
 		this.previdenciasOficiais.add(prev);
 		this.totalPrevidenciOficial += valor;
 		
 	}
 
+	
+
 	public float getTotalDeducaoPrevidenciaOficial() {
 		return this.totalPrevidenciOficial;
 	}
 
 	public void cadastraPensaoAlimenticia(String descPensaoAlimentica, float valorPensaoAlimenticia) throws Exception {
-		if(descPensaoAlimentica.trim().length()<1) {
-			throw new DescricaoEmBrancoException();
-		}
-		if(valorPensaoAlimenticia<=0) {
-			throw new ValorDeducaoInvalidoException();
-		}
+		verificaExecptions(descPensaoAlimentica, valorPensaoAlimenticia);
 		PensaoAlimentica pensao = new PensaoAlimentica(descPensaoAlimentica,valorPensaoAlimenticia);
 		this.pensoesAlimentica.add(pensao);
 		
@@ -119,12 +113,7 @@ public class Simulador {
 	
 
 	public void cadastraDeducao(String descricaoDeducao, float valorDeducao) throws Exception  {
-		if(descricaoDeducao.trim().length()<1) {
-			throw new DescricaoEmBrancoException();
-		}
-		if(valorDeducao<=0) {
-			throw new ValorDeducaoInvalidoException();
-		}
+		verificaExecptions(descricaoDeducao, valorDeducao);
 		
 		Deducao deducao = new Deducao(descricaoDeducao,valorDeducao);
 		this.valorTotalDeducao += valorDeducao;
@@ -191,6 +180,14 @@ public class Simulador {
 		this.aliquotaEfetiva = ( this.getTotalImposto()/this.getTotalRendimento() ) * 100;
 	}
 	
-	
+	private void verificaExecptions(String descricao, float valor)
+			throws DescricaoEmBrancoException, ValorInvalidoException {
+		if(descricao.trim().length()<1) {
+			throw new DescricaoEmBrancoException();
+		}
+		if(valor<=0) {
+			throw new ValorInvalidoException();
+		}
+	}
 
 }

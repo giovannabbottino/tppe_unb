@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Exceptions.DescricaoEmBrancoException;
-import Exceptions.ValorDeducaoInvalidoException;
+import Exceptions.ValorInvalidoException;
 import model.Simulador;
 
 public class PensaoAlimenticia {
@@ -43,7 +43,7 @@ public class PensaoAlimenticia {
 		
 	}
 	
-	@Test(expected = ValorDeducaoInvalidoException.class)
+	@Test(expected = ValorInvalidoException.class)
 	public void testeValorMenorOuIgualZero() throws Exception {
 		simul.cadastraPensaoAlimenticia(" Carnê", 0f);
 		
