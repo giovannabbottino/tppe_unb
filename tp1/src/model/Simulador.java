@@ -27,7 +27,11 @@ public class Simulador {
 	private float totalImposto;
 	private float baseCalculo;
 	private float aliquotaEfetiva;
-	private static List<Imposto> impostos;
+	private List<Imposto> impostos;
+	
+	public void addImposto(Imposto imposto) {
+		this.impostos.add(imposto);
+	}
 	
 	public Simulador() {
 		rendimentos = new ArrayList<Rendimento>();
@@ -143,34 +147,7 @@ public class Simulador {
 	
 
 	public void apuracaoImposto() {		
-		Imposto temp;
-		float base = this.baseCalculo;
-		
-		if (base > 1903.98f){
-            // 2a faixa
-            base -= 1903.98f;
-            temp = new Imposto((Math.min(base, 922.67f) * 7.5f/100), 2); 
-            impostos.add(temp);
-            if(base > 922.67f) {
-                // 3a faixa
-                base -= 922.67f;
-                temp = new Imposto((Math.min(base, 924.40f) * 15f/100), 3); 
-                impostos.add(temp);
-                if (base > 924.40f) {
-                    // 4a faixa
-                    base -= 924.40f;
-                    temp = new Imposto((Math.min(base, 913.63f) * 22.5f/100), 4);
-                    impostos.add(temp);
-                    if(base > 913.63f) {
-                        // 5a faixa
-                        base -= 913.63f;
-                        temp = new Imposto(( base * 27.5f/100), 5);
-                        impostos.add(temp);
-                        
-                    }
-                }
-            }    
-        }
+		new ApuracaoImposto(this).computar();
 	}
 	
 	public float getTotalImposto() {
