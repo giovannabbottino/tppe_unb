@@ -55,7 +55,7 @@ public class Simulador {
 	public void cadastrarRendimento(String descricao, float valor) throws DescricaoEmBrancoException, ValorInvalidoException{
 		
 
-		verificaExecptions(descricao, valor);
+		verificaExceptions(descricao, valor);
 		Rendimento temp = new Rendimento(descricao, valor);
 		
 		rendimentos.add(temp);
@@ -71,7 +71,7 @@ public class Simulador {
 	
 
 	public void cadastrarPrevidenciaOficial(String descPrevidenciaOficial, float valor) throws  Exception {
-		verificaExecptions(descPrevidenciaOficial, valor);
+		verificaExceptions(descPrevidenciaOficial, valor);
 		PrevidenciaOficial prev = new PrevidenciaOficial(descPrevidenciaOficial,valor);
 		this.previdenciasOficiais.add(prev);
 		
@@ -88,7 +88,7 @@ public class Simulador {
 
 
 	public void cadastraPensaoAlimenticia(String descPensaoAlimentica, float valorPensaoAlimenticia) throws Exception {
-		verificaExecptions(descPensaoAlimentica, valorPensaoAlimenticia);
+		verificaExceptions(descPensaoAlimentica, valorPensaoAlimenticia);
 		PensaoAlimentica pensao = new PensaoAlimentica(descPensaoAlimentica,valorPensaoAlimenticia);
 		this.pensoesAlimentica.add(pensao);
 		
@@ -121,7 +121,7 @@ public class Simulador {
 	
 
 	public void cadastraDeducao(String descricaoDeducao, float valorDeducao) throws Exception  {
-		verificaExecptions(descricaoDeducao, valorDeducao);
+		verificaExceptions(descricaoDeducao, valorDeducao);
 		
 		Deducao deducao = new Deducao(descricaoDeducao,valorDeducao);
 		this.deducoes.add(deducao);
@@ -165,7 +165,7 @@ public class Simulador {
 		this.aliquotaEfetiva = ( this.getTotalImposto()/this.getTotalRendimento() ) * 100;
 	}
 	
-	private void verificaExecptions(String descricao, float valor)
+	private void verificaExceptions(String descricao, float valor)
 			throws DescricaoEmBrancoException, ValorInvalidoException {
 		if(descricao.trim().length()<1) {
 			throw new DescricaoEmBrancoException();
