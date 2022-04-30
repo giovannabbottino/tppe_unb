@@ -17,7 +17,7 @@ Repositorio para a materia de Tecnicas de programação em plataformas emergente
 ## Trabalho Prático
 - [X] [Trabalho Prático 1 - Test-Driven Development](https://github.com/andrelanna/fga0242/tree/master/tp1).  [Solução](https://github.com/giovannabbottino/tppe_unb/tree/main/tp1)
 - [X] [Trabalho Prático 2 - Refactoring](https://github.com/andrelanna/fga0242/tree/master/tp2).  [Solução](https://github.com/giovannabbottino/tppe_unb/tree/refactoring)
-- [ ] [Trabalho Prático 3 - Projeto de código](https://github.com/andrelanna/fga0242/tree/master/tp3). 
+- [X] [Trabalho Prático 3 - Projeto de código](https://github.com/andrelanna/fga0242/tree/master/tp3). [Solução](https://github.com/giovannabbottino/tppe_unb/tree/main/tp3)
 
 ## Exercícios  
 - [X] [Testes parametrizados](https://github.com/andrelanna/fga0242/tree/master/aula4). [Solução](https://github.com/giovannabbottino/tppe_unb/tree/main/Aula%204%20-%20Testes%20parametrizados).
